@@ -1,7 +1,7 @@
 Notes
 =====
 Details about this assignment can be found [on the course webpage](http://cs231n.github.io/), under Assignment #1 of Spring 2019.<br>
-* ##compute distances in 2/1/0 loops<br>
+##compute distances in 2/1/0 loops<br>
 ```Python
 dists[i][j] = np.sqrt(np.sum((X[i] - self.X_train[j]) ** 2))
 dists[i] = np.sqrt(np.sum((X[i] - self.X_train) ** 2, axis = 1))
