@@ -32,3 +32,6 @@ y_t = np.hstack(y_train_folds[0: i] + y_train_folds[i + 1: ])
 [np.vstack](https://docs.scipy.org/doc/numpy/reference/generated/numpy.vstack.html) can concatenate arrays row wisely<br>
 [np.hstack](https://docs.scipy.org/doc/numpy/reference/generated/numpy.hstack.html) column wisely
 Maybe can also refer to [np.concatenate](https://docs.scipy.org/doc/numpy/reference/generated/numpy.concatenate.html), but I failed and idky
+## [svm](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/svm.ipynb)
+### [svm_loss_naive](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/cs231n/classifiers/linear_svm.py)
+Look up [notes](https://cs231n.github.io/optimization-1/) to get `loss` and `dW`
