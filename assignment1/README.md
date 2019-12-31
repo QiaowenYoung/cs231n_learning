@@ -1,6 +1,7 @@
 Notes
 =====
 Details about this assignment can be found [on the course webpage](http://cs231n.github.io/), under Assignment #1 of Spring 2019.<br>
+Run on anaconda. Need to modify the 7th row of [data_utils.py](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/cs231n/data_utils.py) to "import imageio" as I did.
 ## [compute distances in 2/1/0 loops](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/cs231n/classifiers/k_nearest_neighbor.py)
 ```Python
 dists[i][j] = np.sqrt(np.sum((X[i] - self.X_train[j]) ** 2))
