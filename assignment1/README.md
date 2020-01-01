@@ -50,3 +50,7 @@ dW += np.dot(X.T, counts) / N + reg * W
 ```
 ### [linear_classifier](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/cs231n/classifiers/linear_classifier.py)
 Look up [notes](https://cs231n.github.io/optimization-1/) to implement descent gradient
+## [softmax](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/softmax.ipynb)
+## [softmax_loss_naive](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/cs231n/classifiers/softmax.py)
+Look up [notes](https://cs231n.github.io/linear-classify/#softmax) to get improved implementation<br>
+Note that new `dW` will be calculated based on new `L(W)` function
