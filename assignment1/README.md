@@ -35,3 +35,18 @@ Maybe can also refer to [np.concatenate](https://docs.scipy.org/doc/numpy/refere
 ## [svm](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/svm.ipynb)
 ### [svm_loss_naive](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/cs231n/classifiers/linear_svm.py)
 Look up [notes](https://cs231n.github.io/optimization-1/) to get `loss` and `dW`
+### [svm_loss_vectorized](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/cs231n/classifiers/linear_svm.py)
+```Python
+margin = scores - scores[range(N), y].reshape(-1, 1) + 1
+margin[range(N), y] = 0 # make the margin[y[i]] 0
+margin = np.maximum(margin, 0) # make the negative elements in margin 0
+```
+[array.reshape(-1, 1)](https://stackoverflow.com/questions/18691084/what-does-1-mean-in-numpy-reshape) will cause the array's shape to be (N,), and the new array is N * 1; reshape(-1) is 1 * N
+```Python
+counts = (margin > 0).astype(int)
+# counts is of the same shape as margin, and counts[i][j] is 1 for margin[i][j] > 0, 0 for margin[i][j] <= 0
+counts[range(N), y] = - np.sum(counts, axis = 1)
+dW += np.dot(X.T, counts) / N + reg * W
+```
+### [linear_classifier](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/cs231n/classifiers/linear_classifier.py)
+Look up [notes](https://cs231n.github.io/optimization-1/) to implement descent gradient
