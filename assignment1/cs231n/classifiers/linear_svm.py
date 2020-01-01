@@ -29,20 +29,24 @@ def svm_loss_naive(W, X, y, reg):
     loss = 0.0
     for i in range(num_train):
         scores = X[i].dot(W)
-        correct_class_score = scores[y[i]]
+        correct_class_score = scores[y[i]] # y[i] is the correct label for X[i]; scores[y[i]] extracts the score for X[i]
         for j in range(num_classes):
-            if j == y[i]:
+            if j == y[i]: # skip the right label to calculate accuracy
                 continue
             margin = scores[j] - correct_class_score + 1 # note delta = 1
-            if margin > 0:
+            if margin > 0: # if margin < 0, it indicates that this label's score cannot beat correct_class_score
                 loss += margin
+                dW[:, j] += X[i]
+                dW[:, y[i]] -= X[i]
 
     # Right now the loss is a sum over all training examples, but we want it
     # to be an average instead so we divide by num_train.
     loss /= num_train
+    dW /= num_train
 
     # Add regularization to the loss.
     loss += reg * np.sum(W * W)
+    dW += reg * W
 
     #############################################################################
     # TODO:                                                                     #
@@ -55,7 +59,7 @@ def svm_loss_naive(W, X, y, reg):
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
 
     pass
-
+    
     # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
     
     return loss, dW
