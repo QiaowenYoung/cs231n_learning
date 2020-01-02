@@ -54,5 +54,5 @@ Look up [notes](https://cs231n.github.io/optimization-1/) to implement descent g
 ### [softmax_loss_naive](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/cs231n/classifiers/softmax.py)
 Look up [notes](https://cs231n.github.io/linear-classify/#softmax) to get improved implementation<br>
 Note that new `dW` will be calculated based on new `L(W)` function
-### softmax_loss_vectorized & tune hyperparameters
+### [softmax_loss_vectorized](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/cs231n/classifiers/softmax.py) & [tune hyperparameters](https://github.com/QiaowenYoung/cs231n_learning/blob/master/assignment1/softmax.ipynb)
 You just basically inherit codes from svm
